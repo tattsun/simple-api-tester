@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Json API Tester</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+
+    <h1>Json API Tester</h1>
+
+    <form>
+      <div>
+        BaseURL: <input type="text" id="req-baseurl" size="40"><br />
+        EntryPoint: <input type="text" id="req-entrypoint" size="30">
+      </div>
+
+      <div>
+        <input type="radio" name="req-method" id="req-method" value="GET" checked>get</input>
+        <input type="radio" name="req-method" id="req-method" value="POST">post</input>
+      </div>
+
+      <div id="req-data">
+
+      </div>
+
+      <div>
+        <input type="button" onclick="controller.AddNewQuery()" value="Add">
+        <input type="button" onclick="controller.DeleteLastQuery()" value="Delete">
+      </div>
+
+      <div>
+        <input type="button" onclick="controller.SendQuery()" value="Send">
+        <input type="button" onclick="controller.ResetQuery()" value="Reset">
+      </div>
+    </form>
+
+    <div id="req-response">
+    </div>
+
+    <script src="js/build/main.js"></script>
+    <script>
+      var controller = new QueryController();
+    </script>
+  </body>
+</html>
